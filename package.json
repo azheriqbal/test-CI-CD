@@ -7,7 +7,17 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "cypress run --headless && dev"
+    "test": "cypress run --headless && dev",
+    "triggerAllTests-headless": "npx cypress run",
+    "triggerAllTests-headed": "npx cypress run --headed",
+    "triggerAllTests-chrome": "npx cypress --browser chrome",
+    "triggerAllTests-dashboard": "npx cypress run --record --key 2343987",
+    "triggerAllTests-specific-folder": "npx cypress run --spec cypress/e2e/Web-driver-Uni/*",
+    "cross-browser-test-run": "npm run triggerAllTests-specific-folder -- --browser electron --headed & npm run triggerAllTests-specific-folder -- --browser edge --headed"
+
+    
+
+
   },
   "dependencies": {
     "cypress": "^12.5.1",
